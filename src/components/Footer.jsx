@@ -9,7 +9,7 @@ import { SiGmail } from 'react-icons/si';
 import logo from '../assets/logo_blanco.svg';
 
 export default function Footer() {
-  // Extraemos la fecha fuera del JSX para un código más limpio
+
   const currentYear = new Date().getFullYear();
 
   return (
@@ -47,7 +47,7 @@ export default function Footer() {
             <h4 className="text-sm font-bold tracking-wider mb-6 uppercase">Contacto</h4>
             <ul className="space-y-3 text-sm text-gray-300 mb-6">
               <li>San Felipe, Región de Valparaíso</li>
-              <li>Marcos Solis: +56 9 9340 1218</li>
+              <li>Marco Solis: +56 9 9340 1218</li>
               <li><a href="mailto:contacto@agropacking.cl" className="hover:text-white transition-colors">contacto@agropacking.cl</a></li>
             </ul>
             

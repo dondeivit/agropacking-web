@@ -35,7 +35,7 @@ export default function Contacto() {
             Asegura tu próxima cosecha
           </h2>
           <p className="text-lg text-gray-700 font-light">
-            Escríbenos y <span className="font-semibold text-gray-900">Marcos Solis</span>, junto a nuestro equipo técnico, te contactará a la brevedad para evaluar tus equipos y coordinar la mejor solución.
+            Escríbenos y <span className="font-semibold text-gray-900">Marco Solis</span>, junto a nuestro equipo técnico, te contactará a la brevedad para evaluar tus equipos y coordinar la mejor solución.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export default function Contacto() {
                 <FiCheckCircle className="mx-auto text-6xl text-emerald-500" />
                 <h3 className="text-2xl font-bold text-gray-900">¡Solicitud enviada con éxito!</h3>
                 <p className="text-gray-600 max-w-md mx-auto">
-                  Gracias por contactarnos. Marcos Solis o un miembro de nuestro equipo técnico te responderá a la brevedad posible.
+                  Gracias por contactarnos. Marco Solis o un miembro de nuestro equipo técnico te responderá a la brevedad posible.
                 </p>
                 <button
                   onClick={() => setEnviado(false)}
@@ -184,7 +184,7 @@ export default function Contacto() {
               <div>
                 <h4 className="font-bold text-gray-900 mb-1">Teléfono</h4>
                 <p className="text-gray-700 text-sm">
-                  <span className="font-semibold text-gray-900">Marcos Solis:</span> +56 9 9340 1218
+                  <span className="font-semibold text-gray-900">Marco Solis:</span> +56 9 9340 1218
                 </p>
               </div>
             </a>
