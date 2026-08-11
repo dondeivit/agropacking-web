@@ -2,11 +2,6 @@
  * Componente Galería.
  * @component
  * @description Renderiza un grid asimétrico (Masonry UI) para el material audiovisual.
- * 
- * Ajustes de UI/UX implementados:
- * - Estandarización de contrastes: text-gray-600 -> text-gray-700, border-gray-100 -> border-gray-200.
- * - Efecto 3D estático: Se proyecta una sombra más profunda en el hover sin alterar 
- *   la posición física del elemento en el DOM (sin translate).
  */
 import video1 from '../assets/video1.mp4';
 import video2 from '../assets/video2.mp4';
@@ -26,7 +21,6 @@ const colDerecha = [
 ];
 
 const MediaItem = ({ tipo, src, horizontal }) => {
-  // Cambiamos transition-all por transition-shadow para evitar cualquier movimiento
   const clasesBase = "w-full rounded-3xl object-cover shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200 transition-shadow duration-500 ease-out";
   
   return (
@@ -35,15 +29,15 @@ const MediaItem = ({ tipo, src, horizontal }) => {
         <img 
           src={src} 
           alt="Evidencia Agropacking" 
-          // Solo mantenemos el incremento de la sombra (profundidad) sin movimiento
           className={`${clasesBase} hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] ${horizontal ? 'aspect-video' : 'h-auto'}`}
         />
       ) : (
         <video 
           src={src} 
           controls 
+          playsInline
           preload="metadata" 
-          className={`${clasesBase} h-auto`} 
+          className={`${clasesBase} hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] h-auto`} 
         />
       )}
     </div>
