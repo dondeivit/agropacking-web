@@ -42,7 +42,7 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Navegación Desktop*/}
+          {/* Navegación Desktop ordenada de forma lineal al scroll */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-semibold">
             <a 
               href="#inicio" 
@@ -51,16 +51,16 @@ export default function Navbar() {
               INICIO
             </a>
             <a 
-              href="#servicios" 
-              className={`transition-colors ${isScrolled ? 'text-gray-700 hover:text-agro-verde' : 'text-gray-200 hover:text-white'}`}
-            >
-              SERVICIOS
-            </a>
-            <a 
               href="#empresa" 
               className={`transition-colors ${isScrolled ? 'text-gray-700 hover:text-agro-verde' : 'text-gray-200 hover:text-white'}`}
             >
               NOSOTROS
+            </a>
+            <a 
+              href="#servicios" 
+              className={`transition-colors ${isScrolled ? 'text-gray-700 hover:text-agro-verde' : 'text-gray-200 hover:text-white'}`}
+            >
+              SERVICIOS
             </a>
             <a 
               href="#contacto" 
