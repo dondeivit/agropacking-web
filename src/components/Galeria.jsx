@@ -1,7 +1,7 @@
 /**
  * Componente Galería.
  * @component
- * @description Renderiza un grid asimétrico (Masonry UI) para el material audiovisual.
+ * @description Renderiza un grid asimétrico para el material audiovisual.
  */
 import video1 from '../assets/video1.mp4';
 import video2 from '../assets/video2.mp4';
@@ -36,7 +36,10 @@ const MediaItem = ({ tipo, src, horizontal }) => {
           src={src} 
           controls 
           playsInline
-          preload="metadata" 
+          muted
+          autoPlay
+          loop
+          preload="auto"
           className={`${clasesBase} hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] h-auto`} 
         />
       )}
@@ -49,7 +52,6 @@ export default function Galeria() {
     <section id="galeria" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Encabezado */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="text-agro-verde font-bold tracking-widest uppercase text-sm md:text-base mb-4 block">
             Evidencia en Terreno
@@ -62,17 +64,13 @@ export default function Galeria() {
           </p>
         </div>
 
-        {/* Grid de Columnas */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
           <div className="flex flex-col gap-8">
             {colIzquierda.map(item => <MediaItem key={item.id} {...item} />)}
           </div>
-
           <div className="flex flex-col gap-8">
             {colDerecha.map(item => <MediaItem key={item.id} {...item} />)}
           </div>
-
         </div>
       </div>
     </section>
