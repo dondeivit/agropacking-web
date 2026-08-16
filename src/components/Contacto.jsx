@@ -167,9 +167,9 @@ export default function Contacto() {
                 <FiMapPin className="text-xl text-gray-900" />
               </div>
               <div>
-                <h4 className="font-bold text-gray-900 mb-1">Área de cobertura</h4>
+                <h4 className="font-bold text-gray-900 mb-1">Cobertura y atención</h4>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  Base en San Felipe, Región de Valparaíso. Atendemos productores y packing del Valle de Aconcagua.
+                  Despliegue y soporte técnico directo en terreno a lo largo de Chile, coordinando visitas según los requerimientos de cada packing.
                 </p>
               </div>
             </div>
@@ -190,7 +190,7 @@ export default function Contacto() {
             </a>
 
             <a
-              href="mailto:contacto@agropacking.cl"
+              href="mailto:agropacking.servicios@gmail.com"
               className="bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200 flex items-start gap-4 hover:shadow-md transition-shadow group"
             >
               <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shrink-0 group-hover:bg-agro-verde/10 transition-colors">
@@ -198,7 +198,7 @@ export default function Contacto() {
               </div>
               <div>
                 <h4 className="font-bold text-gray-900 mb-1">Correo electrónico</h4>
-                <p className="text-gray-700 text-sm">contacto@agropacking.cl</p>
+                <p className="text-gray-700 text-sm">agropacking.servicios@gmail.com</p>
               </div>
             </a>
 

@@ -1,7 +1,7 @@
 /**
  * Componente Empresa (Nosotros).
  * @component
- * @description Renderiza la filosofía y métricas clave de la compañía.
+ * @description Renderiza la filosofía y métricas clave de la compañía con un enfoque sobrio y técnico.
  */
 export default function Empresa() {
   return (
@@ -11,17 +11,17 @@ export default function Empresa() {
         {/* Encabezado Principal */}
         <div className="text-center max-w-4xl mx-auto mb-20">
           <span className="text-agro-verde font-bold tracking-widest uppercase text-sm md:text-base mb-4 block">
-            Nuestra Filosofía
+            Sobre Nosotros
           </span>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 mb-8 leading-tight">
-            Pasión por la tierra, precisión en la postcosecha.
+            Experiencia en terreno y respaldo técnico en postcosecha.
           </h2>
           <p className="text-lg md:text-xl text-gray-700 font-light leading-relaxed">
-            Fusionamos el arte de preservar la frescura con un profundo conocimiento técnico. Desarrollamos soluciones de gasificación que protegen tu inversión, integrando <strong className="font-semibold text-gray-900">impacto económico</strong> y <strong className="font-semibold text-gray-900">responsabilidad medioambiental</strong>.
+            Nos dedicamos al diseño, fabricación y mantención de sistemas de gasificación especializados estrictamente en arándanos y uvas. Entregamos soluciones prácticas y seguras que aseguran el correcto tratamiento de la fruta en cada temporada.
           </p>
         </div>
 
-        {/* Bloque de Números de Impacto (Contraste aumentado en fondo y textos) */}
+        {/* Bloque de Números de Impacto */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           
           <div className="bg-gray-100 p-12 rounded-3xl border border-gray-200 flex flex-col items-center text-center justify-center">
@@ -32,45 +32,45 @@ export default function Empresa() {
               Años de Experiencia
             </h3>
             <p className="text-gray-600 font-light">
-              Conocimiento técnico profundo del sector agrícola y postcosecha.
+              Trayectoria técnica acumulada en el rubro agrícola y de procesos para packing.
             </p>
           </div>
 
           <div className="bg-gray-100 p-12 rounded-3xl border border-gray-200 flex flex-col items-center text-center justify-center">
             <span className="text-6xl md:text-7xl font-extrabold text-agro-verde tracking-tighter mb-4 block">
-              7
+              9+
             </span>
             <h3 className="text-sm md:text-base font-bold text-gray-900 uppercase tracking-widest mb-2">
               Años como Empresa
             </h3>
             <p className="text-gray-600 font-light">
-              Trayectoria consolidada desarrollando soluciones de gasificación de alto estándar.
+              Trayectoria consolidada desde 2017 desarrollando soluciones de gasificación de alto estándar.
             </p>
           </div>
 
         </div>
 
-        {/* Bloque de Pilares Técnicos (Bordes ajustados para mayor definición) */}
+        {/* Bloque de Pilares Técnicos */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           <div className="bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200">
-            <h4 className="text-xl font-bold text-gray-900 mb-3 tracking-tight">Control certificado en ppm</h4>
+            <h4 className="text-xl font-bold text-gray-900 mb-3 tracking-tight">Control y precisión</h4>
             <p className="text-gray-700 font-light leading-relaxed">
-              Mediciones exactas para respaldar la precisión y el control total en el proceso de gasificación.
+              Equipamiento calibrado para asegurar una dosificación exacta y segura del gas en las cámaras de arándanos y uvas.
             </p>
           </div>
 
           <div className="bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200">
-            <h4 className="text-xl font-bold text-gray-900 mb-3 tracking-tight">Alta hermeticidad</h4>
+            <h4 className="text-xl font-bold text-gray-900 mb-3 tracking-tight">Hermeticidad y seguridad</h4>
             <p className="text-gray-700 font-light leading-relaxed">
-              Diseño estructural orientado a mantener la máxima estabilidad y seguridad operativa en postcosecha.
+              Construcción estructural robusta orientada a garantizar estabilidad operativa y larga vida útil.
             </p>
           </div>
 
           <div className="bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200">
-            <h4 className="text-xl font-bold text-gray-900 mb-3 tracking-tight">Cumplimiento y estándares</h4>
+            <h4 className="text-xl font-bold text-gray-900 mb-3 tracking-tight">Atención en terreno</h4>
             <p className="text-gray-700 font-light leading-relaxed">
-              Enfoque riguroso alineado a las regulaciones vigentes y estándares técnicos aplicables al sector.
+              Respuesta directa y soporte técnico oportuno para resolver requerimientos de los productores a lo largo de Chile.
             </p>
           </div>
 

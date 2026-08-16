@@ -1,34 +1,52 @@
 /**
  * Componente Servicios.
  * @component
- * @description Despliega la oferta de valor mediante un grid modular de tarjetas.
+ * @description Despliega la oferta de valor y soluciones técnicas especializadas para packing.
  */
-import { FiSettings, FiBox, FiCheckCircle, FiLayers } from 'react-icons/fi';
+import { FiSettings, FiBox, FiCheckCircle, FiUsers, FiCheck } from 'react-icons/fi';
 
 const listaServicios = [
   {
     id: 1,
-    titulo: "Servicio Técnico",
-    descripcion: "Mantención preventiva y correctiva de sus equipos. Solucionamos fallas y realizamos ajustes mecánicos para minimizar tiempos de detención.",
+    titulo: "Servicio Técnico y Mantención",
+    descripcion: "Mantención preventiva y correctiva para asegurar la eficiencia, seguridad y correcta aplicación del tratamiento en terreno.",
+    puntos: [
+      "Mantención Preventiva: Inspección completa, limpieza técnica, revisión estructural, cambio de componentes y calibración.",
+      "Mantención Correctiva: Reparación de fallas, reemplazo de piezas, soldaduras, refuerzos estructurales y ajustes mecánicos."
+    ],
     icono: <FiSettings strokeWidth={1.5} className="w-8 h-8 text-agro-verde" />
   },
   {
     id: 2,
     titulo: "Fabricación e Instalación",
-    descripcion: "Diseño de cámaras y carros dosificadores a medida. Incluye instalación, puesta en marcha y capacitación integral para sus operarios.",
+    descripcion: "Diseño a medida de equipos y sistemas de postcosecha optimizados exclusivamente para uva de mesa y arándanos a lo largo de Chile.",
+    puntos: [
+      "Cámaras de sulfitado (SO2) de alta hermeticidad y resistencia estructural.",
+      "Termoeléctrico industrial de acero inoxidable (control digital y electrónico entre 25°C y 10°C para evitar condensación y quemaduras en la fruta).",
+      "Gasificador móvil con panel electrónico y doble memoria (M1/M2).",
+      "Sulfo dosificadores de precisión."
+    ],
     icono: <FiBox strokeWidth={1.5} className="w-8 h-8 text-agro-verde" />
   },
   {
     id: 3,
     titulo: "Certificación Técnica",
-    descripcion: "Evaluación exhaustiva de operatividad y seguridad. Entregamos informes detallados y certificados de funcionamiento de sus cámaras.",
+    descripcion: "Evaluación exhaustiva tras cada inspección para garantizar el cumplimiento de estándares técnicos.",
+    puntos: [
+      "Informe de estado general, condiciones de seguridad y operatividad.",
+      "Recomendaciones técnicas y entrega de certificación oficial de funcionamiento."
+    ],
     icono: <FiCheckCircle strokeWidth={1.5} className="w-8 h-8 text-agro-verde" />
   },
   {
     id: 4,
-    titulo: "Insumos y Repuestos",
-    descripcion: "Suministro de componentes clave, recambios estructurales y piezas calibradas para asegurar la correcta aplicación del gas en todo momento.",
-    icono: <FiLayers strokeWidth={1.5} className="w-8 h-8 text-agro-verde" />
+    titulo: "Capacitación Operativa",
+    descripcion: "Inducción técnica integral en terreno para asegurar el correcto funcionamiento de los equipos por parte de tu personal.",
+    puntos: [
+      "Capacitación para operarios y jefes de packing.",
+      "Instrucción en el manejo de paneles con memorias M1/M2 y protocolos de seguridad operacional."
+    ],
+    icono: <FiUsers strokeWidth={1.5} className="w-8 h-8 text-agro-verde" />
   }
 ];
 
@@ -40,13 +58,13 @@ export default function Servicios() {
         {/* Encabezado */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="text-agro-verde font-bold tracking-widest uppercase text-sm md:text-base mb-4 block">
-            Nuestro Método
+            Nuestros Servicios
           </span>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
-            El respaldo técnico que tu operación necesita
+            Ingeniería y soporte técnico para uvas y arándanos
           </h2>
           <p className="text-lg text-gray-700 font-light">
-            Intervenimos en cada etapa crítica del proceso de sulfitado para garantizar que tus equipos funcionen sin interrupciones y bajo la normativa vigente.
+            Soluciones integrales de postcosecha diseñadas para proteger la fruta en cada etapa del proceso a lo largo de Chile.
           </p>
         </div>
 
@@ -55,17 +73,28 @@ export default function Servicios() {
           {listaServicios.map((servicio) => (
             <div 
               key={servicio.id} 
-              className="bg-white p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200"
+              className="bg-white p-8 md:p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200 flex flex-col justify-between"
             >
-              <div className="w-16 h-16 bg-agro-verde/10 rounded-2xl flex items-center justify-center mb-6">
-                {servicio.icono}
+              <div>
+                <div className="w-16 h-16 bg-agro-verde/10 rounded-2xl flex items-center justify-center mb-6">
+                  {servicio.icono}
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">
+                  {servicio.titulo}
+                </h3>
+                <p className="text-gray-700 font-light mb-6">
+                  {servicio.descripcion}
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight">
-                {servicio.titulo}
-              </h3>
-              <p className="text-gray-700 leading-relaxed font-light">
-                {servicio.descripcion}
-              </p>
+
+              <ul className="space-y-2.5 border-t border-gray-100 pt-6">
+                {servicio.puntos.map((punto, index) => (
+                  <li key={index} className="flex items-start gap-2.5 text-sm text-gray-700">
+                    <FiCheck className="text-agro-verde shrink-0 mt-1" size={16} />
+                    <span>{punto}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

@@ -1,9 +1,9 @@
 /**
  * Componente Hero principal de la Landing Page.
  * @component
- * @description Renderiza la sección superior con enfoque técnico, sin frases exageradas y SEO local.
+ * @description Renderiza la sección superior con enfoque técnico, sin frases exageradas y SEO a escala nacional.
  */
-import fondoHero from '../assets/fondo-hero.jpg'; 
+import fondoHero from '../assets/fondo-hero.webp'; 
 
 export default function Hero() {
   return (
@@ -23,15 +23,15 @@ export default function Hero() {
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center mt-16">
         
         <h2 className="text-gray-300 font-medium tracking-widest text-sm md:text-base mb-4 uppercase">
-          Valle del Aconcagua
+          Tecnología y Postcosecha a lo largo de Chile
         </h2>
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight mb-6 drop-shadow-sm">
-          Protegemos tu inversión en cada cosecha.
+          Protección especializada para uvas y arándanos.
         </h1>
         
         <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl font-light leading-relaxed">
-          Diseño, mantención y certificación de cámaras de <strong className="font-bold text-white">SO<span className="text-[0.6em] align-baseline">2</span></strong> con un riguroso estándar técnico para asegurar la rentabilidad de tu fruta.
+          Diseño, mantención y certificación de cámaras de <strong className="font-bold text-white">SO<span className="text-[0.6em] align-baseline">2</span></strong> con un riguroso estándar técnico para asegurar la rentabilidad de la fruta de exportación.
         </p>
         
         {/* Contenedor de botones */}
@@ -49,7 +49,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 active:bg-gray-200 active:border-gray-200 active:text-gray-900 transition-colors"
           >
-            Cotizar ahora
+            Contactanos
           </a>
         </div>
 

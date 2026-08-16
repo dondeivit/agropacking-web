@@ -4,7 +4,7 @@
  * @description Pie de página de la aplicación. Contiene branding, navegación rápida,
  * datos de contacto y enlaces a redes sociales. 
  */
-import { FaInstagram, FaFacebookF, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
 import logo from '../assets/logo_blanco.svg';
 
@@ -27,7 +27,7 @@ export default function Footer() {
               />
             </a>
             <p className="text-sm text-gray-300 leading-relaxed">
-              Soluciones de gasificación para productores de uva y arándanos, integrando eficiencia técnica, control certificado y compromiso sostenible.
+              Soluciones de gasificación para productores de uvas y arándanos, integrando eficiencia técnica, control certificado y atención en terreno a lo largo de Chile.
             </p>
           </div>
 
@@ -46,14 +46,14 @@ export default function Footer() {
           <address className="not-italic">
             <h4 className="text-sm font-bold tracking-wider mb-6 uppercase">Contacto</h4>
             <ul className="space-y-3 text-sm text-gray-300 mb-6">
-              <li>San Felipe, Región de Valparaíso</li>
+              <li>Atención en terreno a lo largo de Chile</li>
               <li>Marco Solis: +56 9 9340 1218</li>
-              <li><a href="mailto:contacto@agropacking.cl" className="hover:text-white transition-colors">contacto@agropacking.cl</a></li>
+              <li><a href="mailto:agropacking.servicios@gmail.com" className="hover:text-white transition-colors">agropacking.servicios@gmail.com</a></li>
             </ul>
             
             {/* Redes Sociales*/}
             <div className="flex gap-4">
-              <a href="mailto:contacto@agropacking.cl" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-agro-verde transition-colors" aria-label="Enviar correo">
+              <a href="mailto:agropacking.servicios@gmail.com" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-agro-verde transition-colors" aria-label="Enviar correo">
                 <SiGmail size={16} />
               </a>
               <a href="https://wa.me/56993401218" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-agro-verde transition-colors" aria-label="Contactar por WhatsApp">
@@ -62,12 +62,17 @@ export default function Footer() {
               <a href="https://instagram.com/agropacking.aconcaguaspa" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-agro-verde transition-colors" aria-label="Visitar Instagram">
                 <FaInstagram size={18} />
               </a>
+              <a href="https://youtube.com/@agropackingaconcagua6339" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-agro-verde transition-colors" aria-label="Visitar YouTube">
+                <FaYoutube size={16} />
+              </a>
+              {/* 
               <a href="#" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-agro-verde transition-colors" aria-label="Visitar Facebook">
                 <FaFacebookF size={16} />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-agro-verde transition-colors" aria-label="Visitar LinkedIn">
                 <FaLinkedinIn size={16} />
-              </a>
+              </a> 
+              */}
             </div>
           </address>
 
