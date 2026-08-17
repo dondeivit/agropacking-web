@@ -169,7 +169,7 @@ export default function Contacto() {
               <div>
                 <h4 className="font-bold text-gray-900 mb-1">Cobertura y atención</h4>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  Despliegue y soporte técnico directo en terreno a lo largo de Chile, coordinando visitas según los requerimientos de cada packing.
+                  Despliegue y soporte técnico directo en terreno a lo largo de Chile, coordinando visitas según los requerimientos de cada cliente.
                 </p>
               </div>
             </div>
