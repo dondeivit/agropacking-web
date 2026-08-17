@@ -5,21 +5,31 @@ import { FaWhatsapp } from "react-icons/fa";
 export default function Contacto() {
   const [enviado, setEnviado] = useState(false);
 
-  // Envío asíncrono para evitar recargas y prevenir el error 404 de Netlify
+  // Envío asíncrono robusto para Netlify Forms en React/Vite
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
 
+    // Aseguramos que el form-name vaya explícitamente en los parámetros de la petición
+    const bodyParams = new URLSearchParams();
+    formData.forEach((value, key) => {
+      bodyParams.append(key, value);
+    });
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      body: bodyParams.toString(),
     })
-      .then(() => {
-        setEnviado(true);
+      .then((response) => {
+        if (response.ok) {
+          setEnviado(true);
+        } else {
+          alert("Hubo un problema al registrar la solicitud en el servidor.");
+        }
       })
-      .catch((error) => alert("Hubo un error al enviar el formulario: " + error));
+      .catch((error) => alert("Hubo un error de red: " + error));
   };
 
   return (
