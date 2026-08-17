@@ -8,7 +8,7 @@ export default function Empresa() {
     <section id="empresa" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Encabezado Principal */}
+        {/* Encabezado Principal con Propuesta de Valor Integrada */}
         <div className="text-center max-w-4xl mx-auto mb-20">
           <span className="text-agro-verde font-bold tracking-widest uppercase text-sm md:text-base mb-4 block">
             Sobre Nosotros
@@ -17,7 +17,7 @@ export default function Empresa() {
             Experiencia en terreno y respaldo técnico en postcosecha.
           </h2>
           <p className="text-lg md:text-xl text-gray-700 font-light leading-relaxed">
-            Nos dedicamos al diseño, fabricación y mantención de sistemas de gasificación especializados estrictamente en arándanos y uvas. Entregamos soluciones prácticas y seguras que aseguran el correcto tratamiento de la fruta en cada temporada.
+            Especialistas en el diseño, fabricación y mantención de cámaras de gasificación orientadas a asegurar el control efectivo de <strong className="font-semibold text-gray-900">botrytis</strong> en uvas y arándanos. Desarrollamos infraestructura de alta hermeticidad y precisión respaldada por mediciones certificadas en ppm, protegiendo la rentabilidad de cada exportación a lo largo de Chile.
           </p>
         </div>
 

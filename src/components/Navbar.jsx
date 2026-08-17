@@ -7,7 +7,6 @@
 import { useState, useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 
-// Importación de assets condicionales para manejo de contraste
 import logoOscuro from '../assets/logo.svg'; 
 import logoBlanco from '../assets/logo_blanco.svg'; 
 
@@ -33,7 +32,6 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Contenedor del Logo con swap condicional */}
           <a href="#inicio" className="flex items-center opacity-90 hover:opacity-100 transition-opacity duration-300">
             <img 
               src={isScrolled ? logoOscuro : logoBlanco} 
@@ -42,7 +40,6 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Navegación Desktop ordenada de forma lineal al scroll */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-semibold">
             <a 
               href="#inicio" 
@@ -63,6 +60,12 @@ export default function Navbar() {
               SERVICIOS
             </a>
             <a 
+              href="#galeria" 
+              className={`transition-colors ${isScrolled ? 'text-gray-700 hover:text-agro-verde' : 'text-gray-200 hover:text-white'}`}
+            >
+              GALERÍA
+            </a>
+            <a 
               href="#contacto" 
               className={`transition-colors ${isScrolled ? 'text-gray-700 hover:text-agro-verde' : 'text-gray-200 hover:text-white'}`}
             >
@@ -70,7 +73,6 @@ export default function Navbar() {
             </a>
           </nav>
 
-          {/* CTA Principal (Botón WhatsApp) */}
           <div className="flex items-center">
             <a 
               href="https://wa.me/56993401218" 

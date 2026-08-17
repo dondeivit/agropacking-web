@@ -6,7 +6,7 @@
  */
 import { FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
-import logo from '../assets/logo_blanco.svg';
+import logo from '../assets/logo_blanco_verde.svg';
 
 export default function Footer() {
 
@@ -27,7 +27,7 @@ export default function Footer() {
               />
             </a>
             <p className="text-sm text-gray-300 leading-relaxed">
-              Soluciones de gasificación para productores de uvas y arándanos, integrando eficiencia técnica, control certificado y atención en terreno a lo largo de Chile.
+              Diseño y fabricación de cámaras de gasificación de alta hermeticidad para el control efectivo de botrytis y protección de uvas y arándanos, integrando eficiencia técnica, control certificado en ppm y atención en terreno a lo largo de Chile.
             </p>
           </div>
 
@@ -65,14 +65,6 @@ export default function Footer() {
               <a href="https://youtube.com/@agropackingaconcagua6339" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-agro-verde transition-colors" aria-label="Visitar YouTube">
                 <FaYoutube size={16} />
               </a>
-              {/* 
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-agro-verde transition-colors" aria-label="Visitar Facebook">
-                <FaFacebookF size={16} />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-agro-verde transition-colors" aria-label="Visitar LinkedIn">
-                <FaLinkedinIn size={16} />
-              </a> 
-              */}
             </div>
           </address>
 
@@ -80,7 +72,6 @@ export default function Footer() {
 
         <div className="pt-6 text-center text-xs text-gray-400 flex flex-col gap-2">
           <p>© {currentYear} Agropacking Aconcagua SpA. Todos los derechos reservados.</p>
-          <p>Diseñado y desarrollado por <span className="text-white font-semibold">Deivit</span>.</p>
         </div>
       </div>
     </footer>
