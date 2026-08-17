@@ -5,7 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 export default function Contacto() {
   const [enviado, setEnviado] = useState(false);
 
-  // Envío asíncrono optimizado con la ruta actual para Netlify Forms en SPA
+  // Envío estricto: solo marca éxito si Netlify procesa la petición de verdad
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -16,21 +16,21 @@ export default function Contacto() {
       bodyParams.append(key, value);
     });
 
-    fetch(window.location.pathname, {
+    fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: bodyParams.toString(),
     })
       .then((response) => {
-        if (response.ok || response.type === "opaqueredirect") {
+        if (response.ok) {
           setEnviado(true);
         } else {
-          setEnviado(true); // Forzamos el éxito visual para que el usuario reciba confirmación
+          alert("Hubo un problema al registrar la solicitud en el servidor. Inténtalo nuevamente.");
         }
       })
       .catch((error) => {
         console.error("Error de red:", error);
-        setEnviado(true);
+        alert("Hubo un error de red al enviar el formulario.");
       });
   };
 
@@ -51,13 +51,14 @@ export default function Contacto() {
           </p>
         </div>
 
+        {/* Contenedor principal con altura estricta compartida para evitar saltos de diseño */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
           
-          {/* Columna Izquierda: Formulario / Mensaje de Éxito */}
-          <div className="lg:col-span-7 bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-gray-200 flex flex-col justify-center">
+          {/* Columna Izquierda: Formulario / Mensaje de Éxito con altura completa */}
+          <div className="lg:col-span-7 bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-gray-200 flex flex-col justify-between h-full min-h-[580px]">
             
             {enviado ? (
-              <div className="text-center py-12 space-y-4">
+              <div className="text-center py-20 my-auto space-y-4">
                 <FiCheckCircle className="mx-auto text-6xl text-emerald-500" />
                 <h3 className="text-2xl font-bold text-gray-900">¡Solicitud enviada con éxito!</h3>
                 <p className="text-gray-600 max-w-md mx-auto">
@@ -71,7 +72,7 @@ export default function Contacto() {
                 </button>
               </div>
             ) : (
-              <>
+              <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">
                   Envíanos tu solicitud
                 </h3>
@@ -167,18 +168,18 @@ export default function Contacto() {
                     </a>
                   </div>
                 </form>
-              </>
+              </div>
             )}
           </div>
 
-          {/* Columna Derecha: Tarjetas de Información */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-4 lg:space-y-0 h-full py-2">
+          {/* Columna Derecha: Tarjetas de Información con altura fija sincronizada */}
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-4 h-full min-h-[580px]">
             
-            <div className="bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200 flex items-start gap-4">
+            <div className="bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200 flex items-start gap-4 flex-1">
               <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
                 <FiMapPin className="text-xl text-gray-900" />
               </div>
-              <div>
+              <div className="my-auto">
                 <h4 className="font-bold text-gray-900 mb-1">Cobertura y atención</h4>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   Despliegue y soporte técnico directo en terreno a lo largo de Chile, coordinando visitas según los requerimientos de cada cliente.
@@ -188,12 +189,12 @@ export default function Contacto() {
 
             <a
               href="tel:+56993401218"
-              className="bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200 flex items-start gap-4 hover:shadow-md transition-shadow group"
+              className="bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200 flex items-start gap-4 hover:shadow-md transition-shadow group flex-1"
             >
               <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shrink-0 group-hover:bg-agro-verde/10 transition-colors">
                 <FiPhone className="text-xl text-gray-900 group-hover:text-agro-verde transition-colors" />
               </div>
-              <div>
+              <div className="my-auto">
                 <h4 className="font-bold text-gray-900 mb-1">Teléfono</h4>
                 <p className="text-gray-700 text-sm">
                   <span className="font-semibold text-gray-900">Marco Solis:</span> +56 9 9340 1218
@@ -203,22 +204,22 @@ export default function Contacto() {
 
             <a
               href="mailto:agropacking.servicios@gmail.com"
-              className="bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200 flex items-start gap-4 hover:shadow-md transition-shadow group"
+              className="bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200 flex items-start gap-4 hover:shadow-md transition-shadow group flex-1"
             >
               <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shrink-0 group-hover:bg-agro-verde/10 transition-colors">
                 <FiMail className="text-xl text-gray-900 group-hover:text-agro-verde transition-colors" />
               </div>
-              <div>
+              <div className="my-auto">
                 <h4 className="font-bold text-gray-900 mb-1">Correo electrónico</h4>
                 <p className="text-gray-700 text-sm">agropacking.servicios@gmail.com</p>
               </div>
             </a>
 
-            <div className="bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200 flex items-start gap-4">
+            <div className="bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200 flex items-start gap-4 flex-1">
               <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
                 <FiClock className="text-xl text-gray-900" />
               </div>
-              <div>
+              <div className="my-auto">
                 <h4 className="font-bold text-gray-900 mb-1">Horario de atención</h4>
                 <p className="text-gray-700 text-sm">Lunes a Viernes: 09:00 - 18:00 hrs.</p>
               </div>
