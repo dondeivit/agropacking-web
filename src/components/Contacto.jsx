@@ -5,32 +5,33 @@ import { FaWhatsapp } from "react-icons/fa";
 export default function Contacto() {
   const [enviado, setEnviado] = useState(false);
 
-  // Envío estricto: solo marca éxito si Netlify procesa la petición de verdad
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
+    
+    // Tu Form Access Key de Web3Forms
+    formData.append("access_key", "e4fdad22-2c5c-426f-9c78-f3ae55774fae");
 
-    const bodyParams = new URLSearchParams();
-    formData.forEach((value, key) => {
-      bodyParams.append(key, value);
-    });
-
-    fetch("/", {
+    fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: bodyParams.toString(),
+      body: JSON.stringify(Object.fromEntries(formData)),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
     })
-      .then((response) => {
-        if (response.ok) {
+      .then(async (response) => {
+        const json = await response.json();
+        if (response.status === 200) {
           setEnviado(true);
         } else {
-          alert("Hubo un problema al registrar la solicitud en el servidor. Inténtalo nuevamente.");
+          alert(json.message || "Hubo un error al enviar el mensaje.");
         }
       })
       .catch((error) => {
-        console.error("Error de red:", error);
-        alert("Hubo un error de red al enviar el formulario.");
+        console.error("Error:", error);
+        alert("Hubo un error de red al enviar la solicitud.");
       });
   };
 
@@ -51,10 +52,9 @@ export default function Contacto() {
           </p>
         </div>
 
-        {/* Contenedor principal con altura estricta compartida para evitar saltos de diseño */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
           
-          {/* Columna Izquierda: Formulario / Mensaje de Éxito con altura completa */}
+          {/* Columna Izquierda: Formulario / Mensaje de Éxito */}
           <div className="lg:col-span-7 bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-gray-200 flex flex-col justify-between h-full min-h-[580px]">
             
             {enviado ? (
@@ -78,20 +78,9 @@ export default function Contacto() {
                 </h3>
 
                 <form
-                  name="contacto"
-                  method="POST"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
                   onSubmit={handleSubmit}
                   className="space-y-6 flex-grow flex flex-col justify-between"
                 >
-                  <input type="hidden" name="form-name" value="contacto" />
-                  <p className="hidden">
-                    <label>
-                      No llenes este campo si eres humano: <input name="bot-field" />
-                    </label>
-                  </p>
-
                   <div>
                     <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-2">
                       Nombre completo
@@ -127,7 +116,7 @@ export default function Contacto() {
                       <input
                         type="email"
                         id="correo"
-                        name="correo"
+                        name="email"
                         required
                         className="w-full px-4 py-3 bg-gray-100 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-agro-verde/20 focus:border-agro-verde transition-colors"
                         placeholder="tu@correo.com"
@@ -141,7 +130,7 @@ export default function Contacto() {
                     </label>
                     <textarea
                       id="mensaje"
-                      name="mensaje"
+                      name="message"
                       rows="4"
                       required
                       className="w-full px-4 py-3 bg-gray-100 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-agro-verde/20 focus:border-agro-verde transition-colors resize-none"
@@ -172,7 +161,7 @@ export default function Contacto() {
             )}
           </div>
 
-          {/* Columna Derecha: Tarjetas de Información con altura fija sincronizada */}
+          {/* Columna Derecha: Tarjetas de Información con altura sincronizada */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-4 h-full min-h-[580px]">
             
             <div className="bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] border border-gray-200 flex items-start gap-4 flex-1">
