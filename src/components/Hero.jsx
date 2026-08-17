@@ -17,7 +17,7 @@ export default function Hero() {
       }}
     >
       {/* Overlay oscuro optimizado para mayor contraste */}
-      <div className="absolute inset-0 bg-black/70 z-0"></div>
+      <div className="absolute inset-0 bg-black/50 z-0"></div>
 
       {/* Contenedor del contenido */}
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center mt-16">
